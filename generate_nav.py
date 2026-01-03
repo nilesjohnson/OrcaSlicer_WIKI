@@ -95,7 +95,7 @@ def get_file_title(filepath: Path) -> str:
 def get_sort_key(path: Path) -> tuple:
     """Generate a sort key for ordering files/folders."""
     name = path.name.lower() if path.is_dir() else path.stem.lower()
-    
+
     # Priority ordering: basic/intro first, advanced/misc last
     if any(x in name for x in ['index', 'home', 'intro', 'overview', 'guide']):
         return (0, name)
@@ -105,7 +105,10 @@ def get_sort_key(path: Path) -> tuple:
         return (8, name)
     if any(x in name for x in ['other', 'misc', 'dependencies']):
         return (9, name)
-    
+    # Developer reference goes to the bottom
+    if name == 'developer-reference':
+        return (10, name)
+
     return (5, name)  # Default: middle priority, alphabetical
 
 
@@ -217,10 +220,10 @@ def update_mkdocs_yml(mkdocs_path: Path, nav_yaml: str) -> None:
     content = mkdocs_path.read_text(encoding='utf-8')
     
     # Find and replace the nav section
-    # Match nav: followed by indented content until next top-level key or EOF
+    # Match nav: followed by lines starting with - or whitespace until next top-level key or EOF
     nav_pattern = re.compile(
-        r'^nav:\s*\n((?:[ \t]+.*\n)*?)(?=^[a-zA-Z]|\Z)',
-        re.MULTILINE | re.DOTALL
+        r'^nav:\s*\n((?:[ \t-].*\n)*)',
+        re.MULTILINE
     )
     
     match = nav_pattern.search(content)

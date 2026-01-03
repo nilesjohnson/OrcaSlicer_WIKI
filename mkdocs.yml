@@ -45,16 +45,6 @@ nav:
   - "Filament Tolerance Calibration": "calibration/tolerance-calib.md"
   - VFA: "calibration/vfa-calib.md"
   - "Max Volumetric Speed (FlowRate) Calibration": "calibration/volumetric-speed-calib.md"
-- "Developer Reference":
-  - "Localization and translation guide": "developer-reference/Localization_guide.md"
-  - "Placeholders Variables": "developer-reference/Built-in-placeholders-variables.md"
-  - "How to Build": "developer-reference/How-to-build.md"
-  - "Guide: Develop Profiles for OrcaSlicer": "developer-reference/How-to-create-profiles.md"
-  - "How to Test": "developer-reference/How-to-test.md"
-  - "How to Contribute to the Wiki": "developer-reference/How-to-wiki.md"
-  - "Application Structure Overview": "developer-reference/plater-sidebar-tab-combobox.md"
-  - "Preset and Bundle": "developer-reference/Preset-and-bundle.md"
-  - "Slicing Hierarchy": "developer-reference/slicing-hierarchy.md"
 - "General Settings":
   - "Keyboard Shortcuts": "general-settings/keyboard-shortcuts.md"
 - "Material Settings":
@@ -143,3 +133,13 @@ nav:
     - "Multimaterial setup": printer_settings/multimaterial/printer_multimaterial_setup.md
     - "Wipe Tower": printer_settings/multimaterial/printer_multimaterial_wipe_tower.md
     - "Advanced Multi-Material Settings": printer_settings/multimaterial/printer_multimaterial_advanced.md
+- "Developer Reference":
+  - "Localization and translation guide": "developer-reference/Localization_guide.md"
+  - "Placeholders Variables": "developer-reference/Built-in-placeholders-variables.md"
+  - "How to Build": "developer-reference/How-to-build.md"
+  - "Guide: Develop Profiles for OrcaSlicer": "developer-reference/How-to-create-profiles.md"
+  - "How to Test": "developer-reference/How-to-test.md"
+  - "How to Contribute to the Wiki": "developer-reference/How-to-wiki.md"
+  - "Application Structure Overview": "developer-reference/plater-sidebar-tab-combobox.md"
+  - "Preset and Bundle": "developer-reference/Preset-and-bundle.md"
+  - "Slicing Hierarchy": "developer-reference/slicing-hierarchy.md"
