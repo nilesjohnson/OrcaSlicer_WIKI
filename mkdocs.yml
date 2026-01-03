@@ -12,7 +12,9 @@ use_directory_urls: false
 
 # Theme configuration
 theme:
-  name: readthedocs
+  name: material
+  features:
+      - content.code.copy  # Enables the copy-to-clipboard button
 
 # Markdown extensions (using built-in extensions to avoid extra dependencies)
 markdown_extensions:
@@ -24,6 +26,9 @@ markdown_extensions:
       permalink: true
   - attr_list
   - md_in_html
+  - admonition
+  - pymdownx.details  # For collapsible admonitions
+  - pymdownx.superfences
 
 # Navigation structure based on Home.md
 nav:
