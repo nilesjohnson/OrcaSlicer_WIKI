@@ -1,14 +1,14 @@
 site_name: OrcaSlicer Wiki
 site_description: Official Wiki for OrcaSlicer - A powerful open source slicer for FFF (FDM) 3D Printers
-site_url: https://www.orcaslicer.com/wiki
+site_url: https://www.orcaslicer.com/wiki/
 
 # MkDocs requires docs_dir to be a subdirectory
 # The build script will handle the file structure
 docs_dir: docs
 site_dir: html
 
-# Use flat URLs (page.html) instead of directory URLs (page/index.html)
-use_directory_urls: false
+# Use directory URLs
+use_directory_urls: true
 
 # Theme configuration
 theme:
