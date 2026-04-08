@@ -69,7 +69,7 @@ New-Item -ItemType Directory -Force -Path docs | Out-Null
 
 Write-Host "Preparing documentation structure..."
 
-$dirsToCopy = @('images', 'calibration', 'developer-reference', 'general-settings',
+$dirsToCopy = @('images', 'calibration', 'developer_reference', 'general_settings',
     'material_settings', 'print_prepare', 'print_settings', 'printer_settings')
 
 foreach ($dir in $dirsToCopy) {
@@ -79,11 +79,11 @@ foreach ($dir in $dirsToCopy) {
 }
 
 Get-ChildItem -Path . -Filter *.md -ErrorAction SilentlyContinue | Where-Object {
-    $_.Name -ne 'README.md' -and $_.Name -ne 'Home.md'
+    $_.Name -ne 'README.md' -and $_.Name -ne 'home.md'
 } | Copy-Item -Destination docs\ -Force
 
-if (Test-Path Home.md) {
-    Copy-Item Home.md docs\index.md
+if (Test-Path home.md) {
+    Copy-Item home.md docs\index.md
 }
 
 # Make sure MkDocs can see custom CSS/JS during the build

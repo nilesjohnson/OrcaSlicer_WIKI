@@ -45,29 +45,29 @@ rsync -av \
   --exclude='*.yml' \
   --exclude='*.yaml' \
   --exclude='README.md' \
-  --exclude='Home.md' \
+  --exclude='home.md' \
   --exclude='.gitignore' \
   --exclude='infill-analysis' \
   . docs/ 2>/dev/null || {
   # Fallback: manually copy directories and markdown files
   echo "Using fallback copy method..."
-  # Copy root level markdown files, excluding Home.md and README.md
-  find . -maxdepth 1 -name "*.md" ! -name "README.md" ! -name "Home.md" -exec cp {} docs/ \;
+  # Copy root level markdown files, excluding home.md and README.md
+  find . -maxdepth 1 -name "*.md" ! -name "README.md" ! -name "home.md" -exec cp {} docs/ \;
   # Copy all directories with markdown files
   [ -d "images" ] && cp -r images docs/ 2>/dev/null || true
   [ -d "calibration" ] && cp -r calibration docs/ 2>/dev/null || true
-  [ -d "developer-reference" ] && cp -r developer-reference docs/ 2>/dev/null || true
-  [ -d "general-settings" ] && cp -r general-settings docs/ 2>/dev/null || true
+  [ -d "developer_reference" ] && cp -r developer_reference docs/ 2>/dev/null || true
+  [ -d "general_settings" ] && cp -r general_settings docs/ 2>/dev/null || true
   [ -d "material_settings" ] && cp -r material_settings docs/ 2>/dev/null || true
   [ -d "print_prepare" ] && cp -r print_prepare docs/ 2>/dev/null || true
   [ -d "print_settings" ] && cp -r print_settings docs/ 2>/dev/null || true
   [ -d "printer_settings" ] && cp -r printer_settings docs/ 2>/dev/null || true
 }
 
-# Copy Home.md as index.md so mkdocs generates index.html at root level
-# (Home.md was excluded from rsync, so copy it directly from source)
-if [ -f "Home.md" ]; then
-  cp Home.md docs/index.md
+# Copy home.md as index.md so mkdocs generates index.html at root level
+# (home.md was excluded from rsync, so copy it directly from source)
+if [ -f "home.md" ]; then
+  cp home.md docs/index.md
 fi
 
 # Convert GitHub image URLs to relative local paths in all markdown files
