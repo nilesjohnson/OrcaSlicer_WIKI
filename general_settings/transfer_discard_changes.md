@@ -14,4 +14,5 @@ The options are:
 
 A similar dialog pops up when you close OrcaSlicer with unsaved changes. In that case, the Discard and Save buttons have the same function, and there is no Transfer button.
 
-Note: None of these buttons save the current 3mf file; that must be done separately.
+> [!NOTE]
+> None of these buttons save the current 3mf file; that must be done separately.
